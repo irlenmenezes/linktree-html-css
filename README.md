@@ -6,3 +6,6 @@ Linktree é uma plataforma de social-linking e redes sociais que opera num model
 
 
 Para criação deste projeto foram necessários a crição de 1 pagina em HTML, uma pasta para organizar a imagem do perfil e um arquivo CSS para fazer os efeityos de hover, coloração, bordas e etc.
+
+Resultado Final:
+https://irlenmenezes.com.br/
