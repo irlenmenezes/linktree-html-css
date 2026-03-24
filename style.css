@@ -1,63 +1,104 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: #FFF;
-    font-family: 'Roboto', sans-serif;
+*, *::before, *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
 }
 
 :root {
-    --bgcolor : #1C1C1C;
-    --accentcolor: #ce0e00;
+        --bgcolor: #1C1C1C;
+        --accentcolor: #ce0e00;
 }
 
-
 body {
-    background-color: var(--bgcolor);
+        background-color: var(--bgcolor);
+        color: #fff;
+        font-family: 'Roboto', sans-serif;
+        min-height: 100dvh;
+}
+
+@keyframes fadeIn {
+        from {
+                    opacity: 0;
+                    transform: translateY(16px);
+        }
+        to {
+                    opacity: 1;
+                    transform: translateY(0);
+        }
 }
 
 .link-tree {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 90vw;
-    margin: 40px auto;
-    gap: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: min(90vw, 480px);
+        margin: 48px auto;
+        gap: 20px;
+        animation: fadeIn 0.5s ease-out both;
 }
+
 .link-tree img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 3px solid var(--accentcolor);
+        box-shadow: 0 0 20px rgba(206, 14, 0, 0.4);
+        object-fit: cover;
 }
 
 .link-tree h1 {
-    font-size: 2.5rem;
+        font-size: 2.5rem;
+        font-weight: 300;
+        letter-spacing: -0.5px;
+}
+
+.link-tree p {
+        text-align: center;
+        font-size: 0.95rem;
+        font-weight: 300;
+        line-height: 1.6;
+        opacity: 0.8;
 }
 
 .link-tree a {
-    background-color: var(--accentcolor);
-    color: var(--bgcolor);
-    width: 100%;
-    padding: 15px;
-    text-decoration: none;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border: solid 2px var(--accentcolor);
-    transition: all 0.5s linear;
-    
+        background-color: var(--accentcolor);
+        color: var(--bgcolor);
+        width: 100%;
+        padding: 14px 20px;
+        text-decoration: none;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        border: 2px solid var(--accentcolor);
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(206, 14, 0, 0.25);
+        transition: background-color 0.25s ease, color 0.25s ease,
+                            transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .link-tree a:hover {
-    background-color: var(--bgcolor);
-    color: var(--accentcolor);
+        background-color: transparent;
+        color: var(--accentcolor);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(206, 14, 0, 0.45);
+}
+
+.link-tree a:active {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 15px rgba(206, 14, 0, 0.3);
+}
+
+.link-tree a:focus-visible {
+        outline: 2px solid var(--accentcolor);
+        outline-offset: 3px;
 }
 
 @media (min-width: 1024px) {
-    .link-tree {
-        width: 40vw;
-    }
+        .link-tree {
+                    width: min(40vw, 520px);
+        }
 }
